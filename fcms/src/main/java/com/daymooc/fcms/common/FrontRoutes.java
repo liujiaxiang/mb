@@ -8,7 +8,6 @@ import com.daymooc.fcms.friend.MyFriendController;
 import com.daymooc.fcms.gallery.GalleryController;
 import com.daymooc.fcms.home.HomeController;
 import com.daymooc.fcms.index.IndexController;
-import com.daymooc.fcms.kanba.KanbaController;
 import com.daymooc.fcms.like.LikeController;
 import com.daymooc.fcms.login.LoginController;
 import com.daymooc.fcms.post.PostController;
