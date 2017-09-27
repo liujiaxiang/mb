@@ -1,5 +1,6 @@
 # MB
 > MB是基于Jfinal开发的多人博客或者社区网站,二次开发之后也可以作为资讯网站等。具有简单、大气、美观、响应式设计，易二次开发的优点。前台部分界面参考了[mblog](https://gitee.com/mtons/mblog)，后台使用AdminLTE。
+> 演示网站： http://mb.daymooc.com
 
 
 ### 技术选型：
@@ -32,7 +33,10 @@
 3.在浏览器中输入http://localhost:8080 进行访问。
 4.部署于Tomcat时，使用mvn install进行打包获得war包后进行部署。
 
-
+### 支持作者
+![5](https://git.oschina.net/uploads/images/2017/0927/144418_844f6be3_907426.png "weixin5.png")
+![10](https://git.oschina.net/uploads/images/2017/0927/144437_3d8dcfc8_907426.png "weixin10.png")
+![wu](https://git.oschina.net/uploads/images/2017/0927/144457_cd7686e3_907426.png "winxin.png")
 
 ### 开源协议
 
