@@ -34,9 +34,9 @@
 4.部署于Tomcat时，使用mvn install进行打包获得war包后进行部署。
 
 ### 支持作者
-<img src="https://git.oschina.net/uploads/images/2017/0927/144418_844f6be3_907426.png" width = "300" alt="打赏5元" align=center />
-<img src="https://git.oschina.net/uploads/images/2017/0927/144437_3d8dcfc8_907426.png" width = "300" alt="打赏10元" align=center />
-<img src="https://git.oschina.net/uploads/images/2017/0927/144457_cd7686e3_907426.png" width = "300" alt="任意打赏" align=center />
+* 捐助备注昵称
+<img src="https://git.oschina.net/uploads/images/2017/0927/144437_3d8dcfc8_907426.png" width = "260" alt="打赏10元" align=center />
+<img src="https://git.oschina.net/uploads/images/2017/0927/144457_cd7686e3_907426.png" width = "260" alt="任意打赏" align=center />
 
 ### 开源协议
 
