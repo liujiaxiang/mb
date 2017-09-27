@@ -95,7 +95,6 @@ public class JcmsConfig extends JFinalConfig {
     	me.addSharedObject("sk", new com.daymooc.fcms.common.kit.StringKit());
     	me.addSharedObject("timeKit", new com.daymooc.fcms.common.kit.TimeKit());
     	me.addSharedObject("comKit", new com.daymooc.fcms.common.kit.CommonKit());
-	    //me.addSharedFunction("/_view/_admin/common/_admin_layout.html");
     }
     
     /**
@@ -116,9 +115,9 @@ public class JcmsConfig extends JFinalConfig {
 	    ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
 	    arp.setTransactionLevel(Connection.TRANSACTION_READ_COMMITTED);
 	    
-	    //添加obs.sql
-	    arp.setBaseSqlTemplatePath(PathKit.getRootClassPath());
-	    arp.addSqlTemplate("fcms.sql");
+	    //添加fcms.sql
+	    //arp.setBaseSqlTemplatePath(PathKit.getRootClassPath());
+	    //arp.addSqlTemplate("fcms.sql");
 	    
 	    //重要
 	    _MappingKit.mapping(arp);
