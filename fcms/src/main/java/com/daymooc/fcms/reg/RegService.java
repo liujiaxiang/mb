@@ -111,7 +111,7 @@ public class RegService
 	private boolean sendRegActivateAuthEmail(String authCode, User reg) {
 		String title = "MB会员激活邮件";
 		String content = "欢迎加入MB,在这里，你可以分享你的生活。在浏览器地址栏里输入并访问下面激活链接即可完成账户激活：\n\n"
-				+ "http://" +AttributeConstant.WebmVideoIp+"/reg/activate?authCode="
+				+ "http://" +AttributeConstant.WEBIP+"/reg/activate?authCode="
 				+ authCode;
 
 		String emailServer = PropKit.get("emailServer");
