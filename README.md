@@ -29,7 +29,7 @@
 
 1.新建mysql数据库fcms,导入sql文件夹下的sql文件。
 2.运行JcmsConfig.java。
-3.在浏览器中输入http://localhost:8080进行访问。
+3.在浏览器中输入http://localhost:8080 进行访问。
 4.部署于Tomcat时，使用mvn install进行打包获得war包后进行部署。
 
 
