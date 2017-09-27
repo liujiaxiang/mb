@@ -1,0 +1,10 @@
+about=about
+ContentPage=ContentPage
+MainPage=MainPage
+#mysql环境路径及用户密码
+mysqlPath=D:\\Program Files\\mysql-5.6.26-winx64\\bin\\
+user=root
+password=root
+WEBIP=127.0.0.1
+#服务器ip地址设置
+ServerIP=192.168.1.103:8080
