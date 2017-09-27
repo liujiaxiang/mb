@@ -27,10 +27,5 @@ public class AttributeConstant {
     public static final String SESSION_KEY_LOGIN_FAIL = "false";
 	public static final String TARGET_URL=propKit.get("TARGET_URL");
 	public static final String ServerIP=propKit.get("ServerIP");
-	//WEB服务器地址
-	public static final String WebmVideoIp=propKit.get("WebmVideoIp");
-	public static final String WebRTCIP=propKit.get("WebRTCIP");
-
-	
 	
 }
