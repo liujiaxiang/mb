@@ -187,7 +187,7 @@ public class RegService
 		if (sendRegActivateAuthEmail(authCode, account)) {
 			return Ret.ok("msg", "激活码已发送至邮箱，请收取激活邮件并进行激活");
 		} else {
-			return Ret.fail("msg", "激活邮件发送失败，可能是邮件服务器出现故障，请去德眼视频官方QQ群留言给群主或者联系格林股份售后服务，多谢！");
+			return Ret.fail("msg", "激活邮件发送失败，可能是邮件服务器出现故障，请联系我们，多谢！");
 		}
 	}
 }
