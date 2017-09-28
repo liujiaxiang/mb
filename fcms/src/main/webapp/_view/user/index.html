@@ -297,7 +297,7 @@
 														<ul class="tags">
 															<!--注意，这里由于数据库里存的是字符串，所以先通过共享类把字符串转为数组，再做循环-->
 															#for(tag : (post.tags).split(","))
-															<li><a href="#" class="tag tag-sm">#(tag)</a></li>
+															<li><a href="/tags/view/#(tag)" class="tag tag-sm">#(tag)</a></li>
 															#end
 														</ul>
 														#end
@@ -339,7 +339,7 @@
 #end
 
 #define js()
-<script type="text/javascript" src="assets/js/jcms-user-friend-relation.js?v=1"></script>
+<script type="text/javascript" src="/assets/js/jcms-user-friend-relation.js?v=1"></script>
 <script type="text/javascript">
 	//设置关注状态
 $(document).ready(function(){
