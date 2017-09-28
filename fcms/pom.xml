@@ -145,11 +145,6 @@
 							<port>80</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
-						<connector implementation="org.eclipse.jetty.server.ssl.SslSelectChannelConnector">
-			                <port>8443</port>
-			                <password>www123</password>
-			                <keystore> G:/tomcat.keystore</keystore>
-			            </connector>
 					</connectors>
 					
 				</configuration>
