@@ -9,7 +9,7 @@ import com.jfinal.plugin.ehcache.CacheKit;
 import java.util.List;
 
 /**
- * 账户业务，用于关联用户信息
+ * 账户业务
  */
 @SuppressWarnings("rawtypes")
 public class AccountService {
