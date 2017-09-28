@@ -111,7 +111,7 @@ public class MySettingService
 	private void buildPathAndFileName(int accountId, String webRootPath, String[] relativePathFileName, String[] absolutePathFileName) {
 		String relativePath = (accountId / 5000) + "/";
 		String fileName = accountId + extName;
-		relativePathFileName[0] = "upload/avatar/" +relativePath + fileName;
+		relativePathFileName[0] = "/upload/avatar/" +relativePath + fileName;
 
 		String absolutePath = webRootPath + "/upload/avatar/" + relativePath;   // webRootPath 将来要根据 baseUploadPath 调整，改代码，暂时选先这样用着，着急上线
 		File temp = new File(absolutePath);
