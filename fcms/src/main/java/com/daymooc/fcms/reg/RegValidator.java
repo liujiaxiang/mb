@@ -6,6 +6,9 @@ import com.jfinal.kit.Ret;
 import com.jfinal.kit.StrKit;
 import com.jfinal.validate.Validator;
 
+/**
+*注册校验
+*/
 public class RegValidator extends Validator
 {
 
