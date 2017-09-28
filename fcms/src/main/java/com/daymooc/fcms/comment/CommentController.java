@@ -48,7 +48,7 @@ public class CommentController extends BaseController
 		User loginAccount = getLoginAccount();
 		ret.set("loginAccount", loginAccount);
 		// 用模板引擎生成 HTML 片段 replyItem
-		String replyItem = renderToString("/_view/view/common/_reply_item.html", ret);
+		String replyItem = renderToString("_view/view/common/_reply_item.html", ret);
 		
 		ret.set("replyItem", replyItem);
 		renderJson(ret);
