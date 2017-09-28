@@ -154,7 +154,7 @@ public class LoginService
 
 		String title = "MB密码找回邮件";
 		String content = "在浏览器地址栏里输入并访问下面链接即可重置密码：\n\n"
-				+ " http://"+AttributeConstant.WebmVideoIp+"/login/retrievePassword?authCode="
+				+ " http://"+AttributeConstant.WEBIP+"/login/retrievePassword?authCode="
 				+ authCode;
 
 		String emailServer = PropKit.get("emailServer");
