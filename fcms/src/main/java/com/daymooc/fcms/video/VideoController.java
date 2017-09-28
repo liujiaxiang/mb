@@ -58,8 +58,8 @@ public class VideoController extends BaseController
 		UploadFile uploadFile = getFile("video","/video/"+getLoginAccountId());
 		UploadFile uploadFile2 = getFile("image","/video/"+getLoginAccountId());
 		System.out.println(uploadFile);
-		String videoUrl = "/upload/video/"+getLoginAccountId()+"/"+uploadFile.getFileName();
-		String coverUrl = "/upload/video/"+getLoginAccountId()+"/"+uploadFile2.getFileName();
+		String videoUrl = "upload/video/"+getLoginAccountId()+"/"+uploadFile.getFileName();
+		String coverUrl = "upload/video/"+getLoginAccountId()+"/"+uploadFile2.getFileName();
 		
 		String articleContent = getPara("articleContent");
 		if (articleContent == null || articleContent.isEmpty())
@@ -169,13 +169,13 @@ public class VideoController extends BaseController
 				String qqVideoId =  StringKit.getTencentVideoId(url);
 				if (cover != null)
 				{
-					posts.setImages("/upload/cover/"+getLoginAccountId()+"/"+cover.getFileName());
-					posts.setLastImages("/upload/cover/"+getLoginAccountId()+"/"+cover.getFileName());
+					posts.setImages("upload/cover/"+getLoginAccountId()+"/"+cover.getFileName());
+					posts.setLastImages("upload/cover/"+getLoginAccountId()+"/"+cover.getFileName());
 				}
 				else 
 				{
-					posts.setImages("/assets/images/cover.png");
-					posts.setLastImages("/assets/images/cover.png");
+					posts.setImages("assets/images/cover.png");
+					posts.setLastImages("assets/images/cover.png");
 				}
 				//https://v.qq.com/iframe/player.html?vid=v0024zl735r&tiny=0&auto=0
 				posts.setVideo("https://v.qq.com/iframe/player.html?vid="+qqVideoId+"&tiny=0&auto=0");
