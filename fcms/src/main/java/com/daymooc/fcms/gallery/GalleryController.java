@@ -63,7 +63,7 @@ public class GalleryController extends BaseController
 		String images = null;
 		for(int i=0;i < fileNum;i++)
 		{
-			String fileName ="/upload/gallery/" +getLoginAccountId() + "/" + uploadFiles.get(i).getFileName();
+			String fileName ="upload/gallery/" +getLoginAccountId() + "/" + uploadFiles.get(i).getFileName();
 			images = StringKit.conactString(fileName,",");
 		}
 		Ret ret = new Ret();
