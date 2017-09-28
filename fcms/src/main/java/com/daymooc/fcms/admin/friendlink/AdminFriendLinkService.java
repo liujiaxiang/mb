@@ -36,7 +36,7 @@ public class AdminFriendLinkService
 		
 		link.setSiteName(siteName);
 		link.setUrl(url);
-		link.setLogo("/upload/"+logo);
+		link.setLogo("upload/"+logo);
 		if (link.save())
 		{
 			return Ret.ok("msg", "增加成功");
