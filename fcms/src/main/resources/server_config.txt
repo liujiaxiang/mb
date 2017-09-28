@@ -1,3 +1,4 @@
+#大家可以修改下代码，将该配置文件与jcms_config_dev.txt进行合并
 about=about
 ContentPage=ContentPage
 MainPage=MainPage
