@@ -77,7 +77,7 @@ public class AccountService {
 	}
 
 	/**
-	 * 在course、Feedback、NewsFeed 等模块，需要关联查询获取 User 对象的 nickName、avatar 时使用此方法
+	 * 在Posts 模块，需要关联查询获取 User 对象的 nickName、avatar 时使用此方法
 	 * 避免使用关联查询，优化性能，在使用中更关键的地方在于缓存的清除
 	 * @param joinOnField join 使用的字段名，User 这端使用 id
 	 * @param model 需要 join 的 model
