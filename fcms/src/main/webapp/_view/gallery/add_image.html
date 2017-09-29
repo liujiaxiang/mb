@@ -136,6 +136,13 @@
 <script type="text/javascript" src="/assets/jquery_form/jquery.form.min.js"></script>  
 #include("/_view/blog/common/detail_info_editor.html") 
 <script type="text/javascript">
+//设置上传类型为gallery
+ue.ready(function() {
+	ue.execCommand('serverparam', {
+		'uploadType': 'gallery'
+	});
+});
+
 $(function() {
 	var tagNum = $('.tag').size();
 	if (tagNum < 4) {
