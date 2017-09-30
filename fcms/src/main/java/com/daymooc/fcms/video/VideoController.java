@@ -74,7 +74,7 @@ public class VideoController extends BaseController
 		posts.setContent(getPara("articleContent"));
 		posts.setCreateAt(new Date());
 		posts.setPostType(Posts.VIDEO);
-		posts.setPrivacy(getParaToInt("parivacy"));
+		posts.setPrivacy(getParaToInt("privacy"));
 		//将内容的html转为纯文本
 		String summary = HtmlKit.Html2Text(getPara("articleContent"));
 		//取前200个字符串作为概要
