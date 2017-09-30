@@ -39,6 +39,19 @@ public class AdminAccountController extends BaseController
 	{
 		renderJson(accountService.unlockUser(getParaToInt("userId")));
 	}
+
+	public void delete()
+	{
+		int id = getParaToInt("userId");
+		boolean r = Db.deleteById("user", id);
+		if (r)
+		{
+			renderJson(Ret.ok("msg", "删除成功。"));
+			return;
+		}
+		
+		renderJson(Ret.fail("msg", "删除失败"));
+	}
 	
 	@Before(RegValidator.class)
 	public void addUser()
