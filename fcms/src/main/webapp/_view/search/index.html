@@ -64,6 +64,8 @@
 										<a href="/view/video/#(post.id)">
 									#elseif(post.postType == 3)
 										<a href="/view/gallery/#(post.id)">
+									#elseif(post.postType == 4)
+										<a href="/view/question/#(post.id)">
 									#end
 										<div class="title">
 											<!-- 分类 -->
@@ -73,6 +75,8 @@
 											<span class="label label-success">视</span>
 											#elseif(post.postType == 3)
 											<span class="label label-success">图</span>
+											#elseif(post.postType == 3)
+											<span class="label label-success">问</span>
 											#end
 											<h2>#(post.title)</h2>
 										</div>
