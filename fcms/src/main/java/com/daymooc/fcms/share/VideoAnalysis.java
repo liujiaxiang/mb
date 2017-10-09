@@ -12,9 +12,6 @@ package com.daymooc.fcms.share;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.springframework.util.Assert;
-
 import com.daymooc.fcms.util.URLUtils;
 
 
@@ -45,7 +42,9 @@ public class VideoAnalysis {
 		
 		VideoStrategy strategy = strategies.get(host);
 		
-		Assert.notNull(strategy, "地址格式不对, 或不支持该网站" + host);
+		if (strategy == null) {
+			throw new IllegalArgumentException("地址格式不对, 或不支持该网站" + host);
+		}
 		
 		return strategy.take(url);
 	}
