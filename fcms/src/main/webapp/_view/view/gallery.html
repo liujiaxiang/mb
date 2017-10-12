@@ -23,10 +23,13 @@
 						</div>
 						<div class="post-frame">
 							<div class="thumbs">
-								#for(img : (post.images).split(','))
-									<img class="pimg" src="#(img)" >
-								#end
+								   <img class="pimg" id="pic" src="#(img)" >
 							</div>
+							<div style="text-align: center;">
+								 <input type="button" class="btn btn-primary" value="上一张" onclick="pre();">
+   								 <input type="button" class="btn btn-primary"  value="下一张" onclick="next();">
+							</div>
+							
 							<div class="post-content">
 								#(post.content)
 							</div>
@@ -131,6 +134,29 @@
         	console.log("click");
             like('posts', #(post.id), bMap);
         });
-    }); 
+    });
+  
+  var picArr=new Array();
+  #for(img : (post.images).split(','))
+	  picArr[#(for.index)]="#(img)";
+  #end
+  document.getElementById("pic").src=picArr[0];
+  var index=0;
+  function next(){
+	  if(index==picArr.length-1){
+    	  layer.alert("已经是最后一张了");
+    	  return;
+      }
+      index++;
+      document.getElementById("pic").src=picArr[index];
+  }
+  function pre(){
+	  if(index<=0){
+    	  layer.alert("已经是第一张了");
+    	  return;
+      }
+      index--;
+      document.getElementById("pic").src=picArr[index];
+  }
 </script>
 #end
