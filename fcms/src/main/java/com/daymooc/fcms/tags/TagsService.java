@@ -29,7 +29,7 @@ public class TagsService
 	//获取指定数量的热门标签
 	public List<Tags> getHotTags(int tagNum)
 	{
-		List<Tags> tags = tagsDao.find("select * from tags order by posts limit ?", tagNum);
+		List<Tags> tags = tagsDao.find("select * from tags order by posts desc limit ?", tagNum);
 		
 		return tags;
 	}
