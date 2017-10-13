@@ -30,8 +30,14 @@
 			</div>
 			#end
 		</div>
-		
 	</div>
+	<!--分页-->
+	<nav class="text-center page"> 
+			<ul class="pagination"> 
+			<!-- 分页 -->
+			#@paginate(videoPage.pageNumber, videoPage.totalPage, "?p=")
+			</ul> 
+	</nav>
 </div>
 
 #end
