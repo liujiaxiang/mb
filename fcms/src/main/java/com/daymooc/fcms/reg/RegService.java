@@ -142,7 +142,7 @@ public class RegService
 			int n = Db.update("update user set status = ? where id = ? and status = ?", User.STATUS_OK, authCode.get("accountId"), User.STATUS_REG);
 			if (n > 0) {
                 sendWelcomeMessage(authCode.getInt("accountId"));
-				return Ret.ok("msg", "账号激活成功，欢迎加入 德眼视频平台！");
+				return Ret.ok("msg", "账号激活成功，欢迎加入MB！");
 			} else {
 				return Ret.fail("msg", "未找到需要激活的账号，可能是账号已经激活或已经被锁定，请联系管理员");
 			}
