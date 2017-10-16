@@ -31,26 +31,14 @@
 											<div class="info">
 												<strong>#(post.nickName)</strong>
 												<time>#date(post.createAt,"yyyy-MM-dd HH:MM") </time>
-												#if(post.years != 0)
-												<time>#(post.years)年前</time>
-												#elseif((post.years == 0) && (post.months != 0))
-												<time>#(post.months)月前</time>
-												#elseif(post.days == 1)
-												<time>昨天</time>
-												#elseif(post.days == 2)
-												<time>前天</time>
-												#elseif(post.days == 0)
-												<time>今天</time>
-												#else
-												<time>#(post.days)天前</time>
-												#end
+												<time>#(timeKit.formatOfDate(null, post.createAt))前</time>
 											</div>
 										</a>
 									</div>
 									<div class="counts">
-							        	<span class="act"><i class="fa fa-eye"></i> 8</span>
-							            <span class="act"><i class="fa fa-heart-o"></i> 0</span>
-							            <span class="act"><i class="fa fa-comment-o"></i> 0</span>
+							        	<span class="act"><i class="fa fa-eye"></i> #(post.views)</span>
+							            <span class="act"><i class="fa fa-heart-o"></i> #(post.likeCount)</span>
+							            <span class="act"><i class="fa fa-comment-o"></i> #(post.comments)</span>
 							        </div>
 								</div>
 								<div class="posts-summary">
