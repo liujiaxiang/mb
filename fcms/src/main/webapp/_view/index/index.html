@@ -31,19 +31,7 @@
 											<div class="info">
 												<strong>#(post.nickName)</strong>
 												<time>#date(post.createAt,"yyyy-MM-dd HH:MM") </time>
-												#if(post.years != 0)
-												<time>#(post.years)年前</time>
-												#elseif((post.years == 0) && (post.months != 0))
-												<time>#(post.months)月前</time>
-												#elseif(post.days == 1)
-												<time>昨天</time>
-												#elseif(post.days == 2)
-												<time>前天</time>
-												#elseif(post.days == 0)
-												<time>今天</time>
-												#else
-												<time>#(post.days)天前</time>
-												#end
+												<time>#(timeKit.formatOfDate(null, post.createAt))前</time>
 											</div>
 										</a>
 									</div>
