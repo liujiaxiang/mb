@@ -58,6 +58,7 @@ public class CommentController extends BaseController
 	{
 		int commentId = getParaToInt("commentId");
 		int feedId = getParaToInt("feedId");
+		int postId = getParaToInt("postId");
 		boolean r2 = Db.deleteById("news_feed", feedId);
 		
 		if (!r2)
@@ -73,6 +74,8 @@ public class CommentController extends BaseController
 		}
 		//清除cache
 		NewsFeedService.me.clearCache();
+		//评论数减去1
+		Db.update("update posts set comments=comments-1 where id=?",postId);
 		renderJson(Ret.ok("msg", "删除评论成功"));
 		return;
 	}

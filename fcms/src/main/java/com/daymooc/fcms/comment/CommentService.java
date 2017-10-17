@@ -4,8 +4,10 @@ import java.util.Date;
 import java.util.List;
 
 import com.daymooc.fcms.common.account.AccountService;
+import com.daymooc.fcms.common.model.Posts;
 import com.daymooc.fcms.common.model.PostsComment;
 import com.daymooc.fcms.like.LikeMessageLogService;
+import com.daymooc.fcms.message.MessageService;
 import com.daymooc.fcms.newsfeed.NewsFeedService;
 import com.daymooc.fcms.newsfeed.ReferMeKit;
 import com.jfinal.kit.Ret;
@@ -16,6 +18,7 @@ public class CommentService
 {
 	public static final CommentService me = new CommentService();
 	final PostsComment commentDao = new PostsComment().dao();
+	final Posts postsDao = new Posts().dao();
 	int pageSize  = 20;
 	final String REF_TYPE_POST = "posts";//posts表，目前只有这个
 
@@ -28,7 +31,7 @@ public class CommentService
 		reply.setUserId(myId);
 		reply.setContent(content);
 		reply.setCreateAt(new Date());
-		//@提到我
+		//处理@提到我
 		List<Integer> referAccounts = ReferMeKit.buildAtMeLink(reply);
 
 		reply.save();
@@ -36,11 +39,34 @@ public class CommentService
 		//评论数加1
 		Db.update("update posts set comments=comments+1 where id=?",postId);
 
+		//获取文章信息
+		Posts post = postsDao.findById(postId);
+		String postType = "article";
+		int type = post.getPostType();
+		if (type == 1)
+		{
+			postType = "article";
+		}
+		else if (type == 2)
+		{
+			postType = "video";
+		} 
+		else if (type == 3)
+		{
+			postType = "gallery";
+		}
+		else if (type == 4)
+		{
+			postType = "question";
+		}
 		//增加动态信息
+		
 		NewsFeedService.me.createCommentsNewsFeed(myId, reply, referAccounts);
 		// 向被回复的人发送私信，鼓励创造更多资源
 		final Integer userId = getUserIdOfRef(REF_TYPE_POST, postId);
-        LikeMessageLogService.me.sendSystemMessage(myId, userId, REF_TYPE_POST, postId);
+		String nickName = Db.queryStr("select nickName from user where id=?",myId);
+        String msg ="@"+nickName+" 刚刚回复了你的" + "文章：<a href='/view/" +postType +"/" + postId +"' target='_blank' style='color:#0cb366'>" + post.getTitle()+"</a>";
+		MessageService.me.sendSystemMessage(myId, userId, msg);
 
 		return Ret.ok("reply", reply);
 	}

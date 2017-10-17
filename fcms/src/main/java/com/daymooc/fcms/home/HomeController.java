@@ -11,6 +11,7 @@ import com.daymooc.fcms.common.model.Posts;
 import com.daymooc.fcms.common.model.PostsComment;
 import com.daymooc.fcms.message.MessageService;
 import com.daymooc.fcms.newsfeed.NewsFeedService;
+import com.daymooc.fcms.newsfeed.ReferMeService;
 import com.daymooc.fcms.newsfeed.RemindService;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
@@ -69,12 +70,20 @@ public class HomeController extends BaseController
 			Page<Friend> fansPage = homeSrv.getFans(cUerId, getParaToInt("p", 1));
 			setAttr("fansPage", fansPage);
 		}
+		else if (page.equals("referMe"))
+		{
+			Page<NewsFeed> newsFeedPage = ReferMeService.me.paginate(getLoginAccountId(), getParaToInt("p", 1));
+			RemindService.me.resetRemindOfReferMe(getLoginAccountId()); // 重置提醒 remind 的 referMe 字段
+			setAttr("newsFeedPage", newsFeedPage);
+		}
 		else if (page.equals("notifies"))
 		{
 			Page<Message> msgPage = msgSrv.paginate(getParaToInt("p", 1), cUerId);
 			//用户查看消息之后重置消息数量,这里暂时只有message
 			//TODO fans,referMe后面需要增加
 			remindSrv.resetRemindOfMessage(cUerId);
+			remindSrv.resetRemindOfNewFans(cUerId);
+			remindSrv.resetRemindOfReferMe(cUerId);
 			
 			setAttr("msgPage", msgPage);
 		}

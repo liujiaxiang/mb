@@ -27,6 +27,10 @@ public class RegService
 		return Db.queryInt("select id from user where email = ? limit 1", email) != null;
 	}
 	
+	public boolean isNickNameExists(String nickName) {
+		return Db.queryInt("select id from user where nickName = ? limit 1", nickName) != null;
+	}
+	
 	/**
 	 * 2次密码是否相同
 	 */

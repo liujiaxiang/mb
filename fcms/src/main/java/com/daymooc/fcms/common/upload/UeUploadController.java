@@ -60,7 +60,7 @@ public class UeUploadController extends BaseController {
 		 * });
 		 */
 		String uploadType = getPara("uploadType");
-		System.out.println(uploadType+" sssssssssss");
+
 		if (StrKit.isBlank(uploadType)) {
 			renderJson("state", "上传类型参数缺失");
 			return ;

@@ -48,6 +48,9 @@ public class RegValidator extends Validator
 		if (RegService.me.isUserNameExists(c.getPara("userName"))) {
 			addError("userNameMsg", "用户名已被注册");
 		}
+		if (RegService.me.isNickNameExists(c.getPara("nickName"))) {
+			addError("userNameMsg", "用户昵称已被使用");
+		}
 		Ret ret = validateNickName(userName);
 		if (ret.isFail()) {
 			addError("userNameMsg", ret.getStr("msg"));

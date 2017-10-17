@@ -51,9 +51,11 @@
 							</ul>
 
 							<ul class="list-group user-nav">
-								<li class="list-group-item"><a href="/home/notifies"> <i class="fa fa-bell-o"></i>
-										通知 <span class="label label-danger">#(comKit.getMsgNum(loginAccount.id))</span>
-								</a></li>
+								<li class="list-group-item">
+									<a href="/home/notifies"> <i class="fa fa-bell-o"></i>
+											通知 <span class="label label-danger">#(comKit.getMsgNum(loginAccount.id))</span>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</nav>
@@ -76,6 +78,8 @@
 						#include("/_view/home/common/fans.html")
 					#elseif(page == "notifies")
 						#include("/_view/home/common/notifies.html")
+					#elseif(page == "referMe")
+						#include("/_view/home/common/refer_me.html")
 					#end
 					
 				</div>

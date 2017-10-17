@@ -309,6 +309,17 @@ button, input, select, textarea {
     font-size: 12px;
     text-align: center;;
 }
+
+.tags .tag-type{
+    background: #403d63;
+    color: #ffffff;
+    border: 2px solid #efccae;
+    border-radius: 2px;
+    line-height: 32px;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: center;
+}
 .tag-sm[href]:hover, .tag-sm[href]:focus {
     background-color: #32a5e7;
     color: #fff;

@@ -88,7 +88,7 @@ public class LikeMessageLogService {
 			{
         		postType = "question";
 			}
-            msg = msg + "项目：<a href='/view/" +postType +"/" + ref.getInt("id") +"' target='_blank'>" + ref.getStr("title");
+            msg = msg + "文章：<a href='/view/" +postType +"/" + ref.getInt("id") +"' target='_blank'>" + ref.getStr("title");
         } 
 //        else if (refType == REF_TYPE_SHARE) {
 //            msg = msg + "分享：<a href='/share/" + ref.getInt("id") +"' target='_blank'>" + ref.getStr("title");

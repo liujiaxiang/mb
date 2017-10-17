@@ -78,7 +78,7 @@
 						<time>#(timeKit.formatOfDate(null, x.createAt))前</time>
 					</div>
 					<div class="pull-right hidden-xs">
-						<a class="act" href="#" onclick="delCommentAndFeed(#(x.id), #(x.refId))" data-id="#(x.ref.id)">删除</a>
+						<a class="act" href="#" onclick="delCommentAndFeed(#(x.id), #(x.refId), #(x.ref.id))" data-id="#(x.ref.id)">删除</a>
 					</div>
 				</div>
 				<div class="arrow"></div>
@@ -152,7 +152,7 @@
 
 <script type="text/javascript">
 //删除评论和news_feed
-function delCommentAndFeed(_feedId, _commentId){
+function delCommentAndFeed(_feedId, _commentId, _postId){
     //询问框
     layer.confirm('您确定要删除该评论及动态吗？', {
       btn: ['确定','取消'] //按钮
@@ -164,6 +164,7 @@ function delCommentAndFeed(_feedId, _commentId){
         , data: {
           feedId: _feedId,
           commentId: _commentId,
+          postId: _postId,
         }
         , beforeSend: function() {
       

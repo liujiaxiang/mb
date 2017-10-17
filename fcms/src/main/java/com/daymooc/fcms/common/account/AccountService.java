@@ -147,7 +147,7 @@ public class AccountService {
 	public List<User> getHotUsers()
 	{
 		List<User> users = dao.find("select u.id,u.nickName,u.avatar from user u join posts p on u.id=p.userId group by "
-				+ "u.email order by count(p.userId) desc limit 15");
+				+ "u.nickName order by count(p.userId) desc limit 15");
 		
 		return users;
 	}

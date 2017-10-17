@@ -10,12 +10,12 @@
 					<div class="shadow-box">
 						<!-- tabs -->
 						<div class="filter">
-							<ul>
+							<ul id="menu">
 								<li>
-									<a href="#" class="active"><i class="fa fa-newspaper-o"></i>最新的</a>
+									<a href="/tags/view/#(tagName)"><i class="fa fa-newspaper-o"></i>最新的</a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-fire"></i>热门的</a>
+									<a href="/tags/hot/#(tagName)"><i class="fa fa-fire"></i>热门的</a>
 								</li>
 							</ul>
 						</div>
@@ -124,6 +124,15 @@
             var _this = $(this);//将当前的pimg元素作为_this传入函数  
             imgShow("#outerdiv", "#innerdiv", "#bigimg", _this);  
         });  
+        
+        //最新的和热门的active设置
+        var url = location.pathname, navMenus = $("#menu li a");
+        console.log(url);
+        if (!url.indexOf('/tags/view')) {
+            navMenus.eq(0).addClass("active");
+        }else if (!url.indexOf('/tags/hot')) {
+            navMenus.eq(1).addClass("active");
+        }
     }); 
 </script>
 #end

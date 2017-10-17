@@ -20,13 +20,12 @@ public class MessageService
 	final int pageSize = 15;
 	
 	/**
-	 * 所有私信分页
+	 * 所有消息分页
 	 */
 	public Page<Message> paginate(int pageNum, int accountId)
 	{
-		String select = "select m.*, t.msgCount";
-		String from = "from (select max(id) as maxId, count(id) as msgCount from message where user=? group by friend " + 
-						") as t inner join message m where t.maxId=m.id order by m.id desc";
+		String select = "select * ";
+		String from = "from message where user=? order by createAt desc";
 		Page<Message> msgPage = msgDao.paginate(pageNum, pageSize, select, from, accountId);
 		
 		AccountService.me.join("friend", msgPage.getList(), "nickName", "avatar");
@@ -75,7 +74,7 @@ public class MessageService
 		{
 			throw new IllegalArgumentException("信息类型type值不正确");
 		}
-		
+
 		final Ret ret = Ret.create();
 		final Message m1 = new Message();
 		boolean isOk = Db.tx(new IAtom() {

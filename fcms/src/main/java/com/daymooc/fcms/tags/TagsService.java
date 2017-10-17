@@ -34,10 +34,24 @@ public class TagsService
 		return tags;
 	}
 	
+	//根据标签获取文章
 	public Page<Posts> getPostPageByTag(String tagName, int pageNumber)
 	{
 		String select = "select * ";
 		String from = "from posts where locate(?,tags)>0 order by createAt desc";
+		
+		Page<Posts> postPage = postsDao.paginate(pageNumber, pageSize, select, from, tagName);
+		
+		AccountService.me.join("userId", postPage.getList(), "nickName", "avatar");
+		
+		return postPage;
+	}
+	
+	//根据标签获取 文章，按访问量排名
+	public Page<Posts> getHotPostPageByTag(String tagName, int pageNumber)
+	{
+		String select = "select * ";
+		String from = "from posts where locate(?,tags)>0 order by views desc";
 		
 		Page<Posts> postPage = postsDao.paginate(pageNumber, pageSize, select, from, tagName);
 		
