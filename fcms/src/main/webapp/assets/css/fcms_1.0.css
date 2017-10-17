@@ -232,7 +232,7 @@ button, input, select, textarea {
 
 .posts-info .users .info{
     float: left;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .posts-info .users .info strong{
     display: block;
