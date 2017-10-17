@@ -139,17 +139,15 @@
 			    </div>
 			</div>
 			#end
-			<!--分页-->
-			<nav class="text-center page"> 
-			    <nav class=" text-center"> 
-			     <ul class="pagination"> 
-			      <!-- 分页 -->
-				  #@paginate(newsFeedPage.pageNumber, newsFeedPage.totalPage, "?p=")
-			     </ul> 
-			    </nav> 
-			</nav>
 		#end
 	</div>
+	<!--分页-->
+	<nav class="text-center page"> 
+		 <ul class="pagination"> 
+		  <!-- 分页 -->
+		  #@paginate(newsFeedPage.pageNumber, newsFeedPage.totalPage, "?p=")
+		 </ul> 
+	</nav>
 </div>
 
 <script type="text/javascript">
