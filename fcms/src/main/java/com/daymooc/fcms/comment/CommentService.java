@@ -28,6 +28,8 @@ public class CommentService
 		reply.setUserId(myId);
 		reply.setContent(content);
 		reply.setCreateAt(new Date());
+		//@提到我
+		List<Integer> referAccounts = ReferMeKit.buildAtMeLink(reply);
 
 		reply.save();
 
@@ -35,8 +37,6 @@ public class CommentService
 		Db.update("update posts set comments=comments+1 where id=?",postId);
 
 		//增加动态信息
-		//@提到我
-		List<Integer> referAccounts = ReferMeKit.buildAtMeLink(reply);
 		NewsFeedService.me.createCommentsNewsFeed(myId, reply, referAccounts);
 		// 向被回复的人发送私信，鼓励创造更多资源
 		final Integer userId = getUserIdOfRef(REF_TYPE_POST, postId);
