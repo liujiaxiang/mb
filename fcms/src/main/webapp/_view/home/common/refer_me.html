@@ -49,4 +49,11 @@
         </div>
         #end
     </div>
+    <!--分页-->
+	<nav class="text-center page"> 
+		 <ul class="pagination"> 
+		  <!-- 分页 -->
+		  #@paginate(newsFeedPage.pageNumber, newsFeedPage.totalPage, "?p=")
+		 </ul> 
+	</nav>
 </div>

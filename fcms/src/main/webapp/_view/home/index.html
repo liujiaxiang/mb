@@ -53,7 +53,12 @@
 							<ul class="list-group user-nav">
 								<li class="list-group-item">
 									<a href="/home/notifies"> <i class="fa fa-bell-o"></i>
-											通知 <span class="label label-danger">#(comKit.getMsgNum(loginAccount.id))</span>
+											通知  <span class="label label-danger">#(comKit.getMsgNum(loginAccount.id))</span>
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a href="/home/message"> <i class="fa fa-envelope-o"></i>
+											私信  <span class="label label-danger">#(comKit.getMessageNum(loginAccount.id))</span>
 									</a>
 								</li>
 							</ul>
@@ -80,6 +85,12 @@
 						#include("/_view/home/common/notifies.html")
 					#elseif(page == "referMe")
 						#include("/_view/home/common/refer_me.html")
+					<!-- 所有私信 -->
+					#elseif(page == "message")
+						#include("/_view/home/common/_all_friend_message_list.html")
+					<!-- 与某一个用户私信 -->
+					#elseif(page == "friendMessage")
+						#include("/_view/home/common/one_friend_message.html")
 					#end
 					
 				</div>

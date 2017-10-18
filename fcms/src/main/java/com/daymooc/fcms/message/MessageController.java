@@ -21,19 +21,22 @@ public class MessageController extends BaseController
 	/**
 	 * 所有私信往来
 	 */
-	@ActionKey("/my/message")
+	@ActionKey("/home/message")
 	public void message()
 	{
 		int userId = getLoginAccountId();
-		Page<Message> messagePage = msgSrv.paginate(getParaToInt("p", 1), userId);
+		Page<Message> messagePage = msgSrv.allPaginate(getParaToInt("p", 1), userId);
 		RemindService.me.resetRemindOfMessage(userId);
 		setAttr("messagePage", messagePage);
+		setAttr("page", "message");
+		
 		render("index.html");
 	}
 	
 	public void sysMsg()
 	{
-		render("sys_message.html");
+		setAttr("page", "sysMsg");
+		render("index.html");
 	}
 	
 	/**
@@ -48,7 +51,8 @@ public class MessageController extends BaseController
 
         setAttr("messagePage", messagePage);
         setAttr("friend", friend);
-        render("one_friend_message.html");
+        setAttr("page", "friendMessage");
+        render("index.html");
     }
 
     /**
@@ -80,7 +84,7 @@ public class MessageController extends BaseController
         ret.set("loginAccount", getLoginAccount());     // 放入 loginAccount 供 renderToString 使用
 
         // 用模板引擎生成 HTML 片段 replyItem
-        String replyItem = renderToString("/_view/my/message/_one_friend_message_reply_item.html", ret);
+        String replyItem = renderToString("/_view/home/common/_one_friend_message_reply_item.html", ret);
         
         ret.set("replyItem", replyItem);
         renderJson(ret);

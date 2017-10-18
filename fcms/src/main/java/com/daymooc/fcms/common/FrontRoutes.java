@@ -10,6 +10,7 @@ import com.daymooc.fcms.home.HomeController;
 import com.daymooc.fcms.index.IndexController;
 import com.daymooc.fcms.like.LikeController;
 import com.daymooc.fcms.login.LoginController;
+import com.daymooc.fcms.message.MessageController;
 import com.daymooc.fcms.post.PostController;
 import com.daymooc.fcms.question.QuestionController;
 import com.daymooc.fcms.reg.RegController;
@@ -42,6 +43,8 @@ public class FrontRoutes extends Routes
 		add("/post", PostController.class);
 		add("/account", AccountController.class);
 		add("/user", UserController.class);
+		//我的消息
+		add("/home/message", MessageController.class, "/home");
 		//点赞
 		add("/like", LikeController.class);
 		//评论

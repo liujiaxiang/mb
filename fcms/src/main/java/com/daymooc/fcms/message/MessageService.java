@@ -33,6 +33,20 @@ public class MessageService
 	}
 	
 	/**
+	 * 所有私信分页
+	 */
+	public Page<Message> allPaginate(int pageNum, int accountId)
+	{
+		String select = "select m.*, t.msgCount";
+		String from = "from (select max(id) as maxId, count(id) as msgCount from message where user=? group by friend " + 
+						") as t inner join message m where t.maxId=m.id order by m.id desc";
+		Page<Message> msgPage = msgDao.paginate(pageNum, pageSize, select, from, accountId);
+		
+		AccountService.me.join("friend", msgPage.getList(), "nickName", "avatar");
+		return msgPage;
+	}
+	
+	/**
 	 * 与某个用户的私信分页
 	 */
 	public Page<Message> paginate(int pageNum, int accountId, int friendId)

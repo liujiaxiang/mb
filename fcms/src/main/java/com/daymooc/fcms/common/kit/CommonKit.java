@@ -38,6 +38,18 @@ public class CommonKit
 		return msgNum;
 	}
 	
+	//获取私信数
+	public static int getMessageNum(int userId)
+	{
+		int msgNum = 0;
+		if(Db.queryNumber("select sum(referMe+message) as msgNum from remind where accountId=?",userId) != null)
+		{
+			msgNum = Db.queryNumber("select sum(referMe+message) as msgNum from remind where accountId=?",userId).intValue();
+			
+		}
+		return msgNum;
+	}
+	
 	//获取友情链接
 	public List<FriendLink> getFriendLink()
 	{
