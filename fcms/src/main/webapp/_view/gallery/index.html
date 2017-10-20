@@ -90,13 +90,14 @@
 									//layer.alert(ret.msg, {icon: 6});
 									//如果删除的是课程，那么删除之后跳转到我的课程
 									sqlJson = ret.posts;
+									//页码加1
+									p = p+1;
+									console.log("p"+p);
 
 									if (sqlJson.length == 0) {
 										loading.text('就有这么多了！');
 									}
-									//页码加1
-									p = p+1;
-									console.log("p"+p);
+									
 
 									//return ;					
 									
@@ -119,9 +120,10 @@
 						loading.data("on",false).fadeIn(800);
 						(function(sqlJson){
 							console.log(sqlJson);
-							/*这里会根据后台返回的数据来判断是否你进行分页或者数据加载完毕这里假设大于30就不在加载数据*/
-							if(0){
-								loading.text('就有这么多了！');//移到上面ajax请求出判断
+							/*初始加载页数从2开始，因此这里判断当页数大于2且没有图片的时候结束*/
+							if(p>2 && sqlJson.length == 0){
+								loading.text('就有这么多了！');//移到上面ajax请求处判断
+								return;
 							}else{
 								var html="";
 								for(var i in sqlJson){
