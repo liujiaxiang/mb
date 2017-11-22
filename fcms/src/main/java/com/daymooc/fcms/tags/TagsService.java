@@ -19,7 +19,7 @@ public class TagsService
 	
 	public List<Posts> getTags()
 	{
-		List<Posts> posts = postsDao.find("select t.name as tagName, temp.* from "
+		List<Posts> posts = postsDao.findByCache("tag", "tags", "select t.name as tagName, temp.* from "
 				+ "(select * from posts order by createAt desc) as temp join tags t on "
 				+ "locate(t.name,tags)>0 group by tagName order by createAt desc");
 		
@@ -29,7 +29,7 @@ public class TagsService
 	//获取指定数量的热门标签
 	public List<Tags> getHotTags(int tagNum)
 	{
-		List<Tags> tags = tagsDao.find("select * from tags order by posts desc limit ?", tagNum);
+		List<Tags> tags = tagsDao.findByCache("hotTag", "hotTag", "select * from tags order by posts desc limit ?", tagNum);
 		
 		return tags;
 	}

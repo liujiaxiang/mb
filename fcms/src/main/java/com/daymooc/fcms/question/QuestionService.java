@@ -21,4 +21,16 @@ public class QuestionService
 		
 		return postPage;
 	}
+	
+	public Page<Posts> getHotQuestions(int pageNum)
+	{
+		String select = "select * ";
+		String from = "from posts where post_type=4 and status=? order by views desc";
+		
+		Page<Posts> postPage = postDao.paginate(pageNum, pageSize, select, from, Posts.STATUS_PUB);
+		
+		AccountService.me.join("userId", postPage.getList(), "nickName", "avatar");
+		
+		return postPage;
+	}
 }

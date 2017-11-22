@@ -110,24 +110,8 @@
            timeToLiveSeconds="3600"
            overflowToDisk="false"
             />
-     <!-- 课程页缓存 -->
-    <cache name="course"
-           maxEntriesLocalHeap="300"
-           eternal="false"
-           timeToIdleSeconds="3600"
-           timeToLiveSeconds="3600"
-           overflowToDisk="false"
-            />
-     <!-- 学习历史 -->
-    <cache name="studyHistory"
-           maxEntriesLocalHeap="300"
-           eternal="false"
-           timeToIdleSeconds="3600"
-           timeToLiveSeconds="3600"
-           overflowToDisk="false"
-            />
     
-      <!-- 个人主页缓存 -->
+    <!-- 个人主页缓存 -->
     <cache name="user"
            maxEntriesLocalHeap="300"
            eternal="false"
@@ -135,42 +119,54 @@
            timeToLiveSeconds="600"
            overflowToDisk="false"
             />
-    <cache name="learnCourse"
-           maxEntriesLocalHeap="300"
-           eternal="false"
-           timeToIdleSeconds="3600"
-           timeToLiveSeconds="3600"
-           overflowToDisk="false"
-            />    
-    
-
-	<!-- 文档缓存 -->
-	<cache name="doc"
-	       maxEntriesLocalHeap="300"
-	       eternal="false"
-	       timeToIdleSeconds="3600"
-	       timeToLiveSeconds="3600"
-	       overflowToDisk="false"
-			/>
-
-	<!-- 下载文件缓存 -->
-	<cache name="download"
-	       maxEntriesLocalHeap="500"
-	       eternal="true"
-	       timeToIdleSeconds="0"
-	       timeToLiveSeconds="0"
-	       overflowToDisk="true"
-			/>
-
-	<!-- 热门分享 -->
-	<cache name="hotShare"
+	<!-- 热门用户 -->
+	<cache name="hotUser"
 	       maxEntriesLocalHeap="50"
 	       eternal="false"
 	       timeToIdleSeconds="600"
 	       timeToLiveSeconds="600"
 	       overflowToDisk="false"
 			/>
-
+	<!-- 热门标签 -->
+	<cache name="hotTag"
+	       maxEntriesLocalHeap="50"
+	       eternal="false"
+	       timeToIdleSeconds="600"
+	       timeToLiveSeconds="600"
+	       overflowToDisk="false"
+			/>
+	<!-- 文章分类 -->
+	<cache name="articleType"
+	       maxEntriesLocalHeap="50"
+	       eternal="false"
+	       timeToIdleSeconds="600"
+	       timeToLiveSeconds="600"
+	       overflowToDisk="false"
+			/>
+	<!-- 热门文章 -->
+	<cache name="hotArticle"
+	       maxEntriesLocalHeap="50"
+	       eternal="false"
+	       timeToIdleSeconds="600"
+	       timeToLiveSeconds="600"
+	       overflowToDisk="false"
+			/>
+	<!-- 发现 -->
+	<cache name="tag"
+	       maxEntriesLocalHeap="50"
+	       eternal="false"
+	       timeToIdleSeconds="600"
+	       timeToLiveSeconds="600"
+	       overflowToDisk="false"
+			/>
+	<!-- 走廊 -->
+	<cache name="gallery"
+	       maxEntriesLocalHeap="50"
+	       eternal="false"
+	       timeToIdleSeconds="600"
+	       timeToLiveSeconds="600"
+	       overflowToDisk="false"
+			/>
 
 <!--  以下是三个 sample cache，仅作配置参考 ============================================  -->
 	<!--

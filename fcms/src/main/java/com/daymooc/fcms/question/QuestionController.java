@@ -42,6 +42,20 @@ public class QuestionController extends BaseController
 		render("index.html");
 	}
 	
+	public void hot()
+	{
+		setAttr("questionPage", questionService.getHotQuestions(getParaToInt("p", 1)));
+		List<User> hotUsers = accountSrv.getHotUsers();
+		List<Tags> hotTags = tagsService.getHotTags(20);
+		List<Posts> hotPosts = blogSrv.getHotPost(8);
+		List<Posts> newPosts = blogSrv.getNewestPost(8);
+		setAttr("hotUsers", hotUsers);
+		setAttr("hotTags", hotTags);
+		setAttr("hotPosts", hotPosts);
+		setAttr("newPosts", newPosts);
+		render("hot.html");
+	}
+	
 	@Before({FrontAuthInterceptor.class})
 	public void addQus()
 	{

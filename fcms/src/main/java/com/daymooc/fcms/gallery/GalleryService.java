@@ -14,7 +14,7 @@ public class GalleryService
 	
 	public List<Posts> getGallery()
 	{
-		List<Posts> posts = postsDao.find("select * from posts where post_type=3 and status=? limit 12", Posts.STATUS_PUB);
+		List<Posts> posts = postsDao.findByCache("gallery", "gallery", "select * from posts where post_type=3 and status=? limit 12", Posts.STATUS_PUB);
 		
 		return posts;
 	}

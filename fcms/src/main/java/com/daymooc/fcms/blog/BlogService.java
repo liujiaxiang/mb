@@ -62,7 +62,7 @@ public class BlogService
 	
 	public List<Posts> getHotPost(int postNum)
 	{
-		List<Posts> hotPosts = postDao.find("select * from posts order by views desc limit ?", postNum);
+		List<Posts> hotPosts = postDao.findByCache("hotArticle", "hotArticle", "select * from posts order by views desc limit ?", postNum);
 		
 		return hotPosts;
 	}

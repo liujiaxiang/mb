@@ -100,7 +100,7 @@ public class RegService
 				return Ret.ok("msg", "注册成功，激活邮件已发送，请查收并激活账号：" + userName);
 			} else
 			{
-				return Ret.fail("msg", "注册成功，但是激活邮件发送失败，可能是邮件服务器出现故障，请去德眼视频官方QQ群留言给群主，多谢！");
+				return Ret.fail("msg", "注册成功，但是激活邮件发送失败，可能是邮件服务器出现故障，请去MB官方QQ群留言给群主，多谢！");
 			}
 		} 
 		else 

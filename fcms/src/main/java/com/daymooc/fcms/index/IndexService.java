@@ -17,7 +17,7 @@ public class IndexService
 	
 	public List<ArticleType> getArticleTypes()
 	{
-		List<ArticleType> types = articleTypeDao.find("select * from article_type");
+		List<ArticleType> types = articleTypeDao.findByCache("articleType", "articleType", "select * from article_type");
 		
 		return types;
 	}
