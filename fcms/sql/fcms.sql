@@ -180,7 +180,7 @@ CREATE TABLE `posts` (
   `comments` int(11) DEFAULT '0' COMMENT '评论数',
   `content` longtext NOT NULL COMMENT '内容',
   `createAt` datetime NOT NULL COMMENT '创建时间',
-  `images` varchar(255) DEFAULT NULL COMMENT '图片',
+  `images` text DEFAULT NULL COMMENT '图片',
   `tags` varchar(255) DEFAULT NULL COMMENT '标签',
   `title` varchar(255) NOT NULL COMMENT '标题',
   `views` int(11) NOT NULL DEFAULT '0' COMMENT '浏览数',
