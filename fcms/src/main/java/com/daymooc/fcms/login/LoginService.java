@@ -160,7 +160,7 @@ public class LoginService
 		String emailServer = PropKit.get("emailServer");
 		String fromEmail = PropKit.get("fromEmail");
 		String emailPass = PropKit.get("emailPass");
-		String toEmail = account.getStr("name");
+		String toEmail = account.getStr("email");
 		try {
 			EmailKit.sendEmail(emailServer, fromEmail, emailPass, toEmail, title, content);
 			return Ret.ok("msg", "密码找回邮件已发送至邮箱，请收取邮件并重置密码");
