@@ -46,16 +46,6 @@ public class EmailKit {
 		}
 	}
 
-	public static void main(String[] args) {
-		String ret = sendEmail(
-				"smtp.163.com",              // 邮件发送服务器地址
-				"deyangreennet@163.com",		// 发件邮箱Jiaxiang123
-				"Jiaxiang123",					// 发件邮箱密码
-				"1280359069@qq.com",		// 收件地址
-				"邮件标题",              // 邮件标题
-				"content");				// 邮件内容
-		System.out.println("发送返回值: " + ret);
-	}
 }
 		
 		
