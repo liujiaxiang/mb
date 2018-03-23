@@ -29,7 +29,7 @@
 ### 如何运行部署
 
 1.新建mysql数据库fcms,导入sql文件夹下的sql文件。  
-2.运行JcmsConfig.java。  
+2.运行JcmsConfig.java，如果项目导入的是idea而不是eclipse，那么需要修改JcmsConfig.java里的main方法，代码里有修改方法的注释。  
 3.在浏览器中输入http://localhost:8080 进行访问。用户名：test,密码：test  
 4.部署于Tomcat时，使用mvn install进行打包获得war包后进行部署。  
 5.注意修改fcms_config_dev.txt和server_config.txt里的配置信息。  
