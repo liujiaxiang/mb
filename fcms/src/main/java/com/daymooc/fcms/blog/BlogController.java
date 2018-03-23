@@ -103,10 +103,21 @@ public class BlogController extends BaseController
 	
 	public void mod()
 	{
-		int postId = getParaToInt(0);
-		Posts post = postService.getPostById(postId);
-		setAttr("aTypes", blogService.getArticleTypes());
-		setAttr("post", post);
-		render("mod_post.html");
+		if (getParaToInt(0) != null)
+		{
+			int userId = Db.queryInt("select userId from posts where id=?", getParaToInt(0));
+			if (getLoginAccountId() == userId)
+			{
+				int postId = getParaToInt(0);
+				Posts post = postService.getPostById(postId);
+				setAttr("aTypes", blogService.getArticleTypes());
+				setAttr("post", post);
+				render("mod_post.html");
+			}
+			else
+			{
+				renderError(404);
+			}
+		}	
 	}
 }
