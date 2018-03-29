@@ -28,7 +28,7 @@ public class MessageService
 		String from = "from message where user=? order by createAt desc";
 		Page<Message> msgPage = msgDao.paginate(pageNum, pageSize, select, from, accountId);
 		
-		AccountService.me.join("friend", msgPage.getList(), "nickName", "avatar");
+		AccountService.me.join("sender", msgPage.getList(), "nickName", "avatar");
 		return msgPage;
 	}
 	
