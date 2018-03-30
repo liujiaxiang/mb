@@ -32,7 +32,8 @@
 2.运行JcmsConfig.java，如果项目导入的是idea而不是eclipse，那么需要修改JcmsConfig.java里的main方法，代码里有修改方法的注释。  
 3.在浏览器中输入http://localhost:8080 进行访问。用户名：test,密码：test  
 4.部署于Tomcat时，使用mvn install进行打包获得war包后进行部署。  
-5.注意修改fcms_config_dev.txt和server_config.txt里的配置信息。  
+5.注意修改fcms_config_dev.txt和server_config.txt里的配置信息。
+6.关于第三方登录实现参见：http://mb.daymooc.com/view/article/132  
 
 ### 支持作者
 *如果该项目对您有帮助，您可以支持一下我，捐助备注昵称
