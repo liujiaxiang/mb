@@ -15,6 +15,7 @@ import com.daymooc.fcms.post.PostService;
 import com.daymooc.fcms.tags.TagsService;
 import com.jfinal.aop.Before;
 import com.jfinal.kit.Ret;
+import com.jfinal.plugin.activerecord.Db;
 
 @Before({FrontAuthInterceptor.class})
 public class BlogController extends BaseController
