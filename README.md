@@ -40,9 +40,13 @@
 <img src="https://git.oschina.net/uploads/images/2017/0927/144437_3d8dcfc8_907426.png" width = "260" alt="打赏10元" align=center />
 <img src="https://git.oschina.net/uploads/images/2017/0927/144457_cd7686e3_907426.png" width = "260" alt="任意打赏" align=center />
 
+### 后续计划
+后续会开发MB安卓端，如果该项目对您有帮助，希望能得到大家支持，由于是业余时间在弄，所以打算用混合开发的方式进行。
+
 ### 开源协议
 
 如果您的网站使用了 MB, 请在网站页面页脚处保留MB相关版权信息链接。
+
 ### 技术交流群
 群号：538297051，大家有问题也可在此讨论，相互帮助。
 
