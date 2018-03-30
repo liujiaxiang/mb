@@ -33,7 +33,9 @@
 3.在浏览器中输入http://localhost:8080 进行访问。用户名：test,密码：test  
 4.部署于Tomcat时，使用mvn install进行打包获得war包后进行部署。  
 5.注意修改fcms_config_dev.txt和server_config.txt里的配置信息。
-6.关于第三方登录实现参见：http://mb.daymooc.com/view/article/132  
+另外：
+1.关于第三方登录实现参见：http://mb.daymooc.com/view/article/132
+2.如果视频无法播放的，需要使用MP4文件修复工具（酷播CuPlayer）进行MP4文件修复。
 
 ### 支持作者
 *如果该项目对您有帮助，您可以支持一下我，捐助备注昵称
