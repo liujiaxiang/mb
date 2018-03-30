@@ -20,6 +20,7 @@ import com.jfinal.aop.Clear;
 import com.jfinal.kit.Ret;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.upload.UploadFile;
+import com.jfinal.plugin.activerecord.Db;
 
 @Before({FrontAuthInterceptor.class})
 public class GalleryController extends BaseController
