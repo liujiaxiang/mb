@@ -25,6 +25,13 @@ public class CommonKit
 		
 		return commentNum;
 	}
+	//获取某人文章数
+	public static long getPostNum(int userId)
+	{
+		long postNum = Db.queryLong("select count(id) from posts where userId=?", userId);
+		
+		return postNum;
+	}
 	
 	//获取通知数
 	public static int getMsgNum(int userId)
