@@ -28,8 +28,8 @@ public class HomeService
 	//我的关注
 	public Page<Friend> getFollows(int userId, int pageNum)
 	{
-		String select = "select f.*, count(p.id) as postNum ";
-		String from = "from friend f join posts p on f.friendId=p.userId and f.userId=?";
+		String select = "select f.* ";
+		String from = "from friend f where f.userId=?";
 		
 		Page<Friend> followPage = friendDao.paginate(pageNum, pageSize, select, from, userId);
 		
@@ -41,8 +41,8 @@ public class HomeService
 	//我的粉丝
 	public Page<Friend> getFans(int userId, int pageNum)
 	{
-		String select = "select f.*, count(p.id) as postNum ";
-		String from = "from friend f join posts p on f.userId=p.userId and f.friendId=?";
+		String select = "select f.* ";
+		String from = "from friend f where f.friendId=?";
 		
 		Page<Friend> fansPage = friendDao.paginate(pageNum, pageSize, select, from, userId);
 		
