@@ -100,3 +100,21 @@
 </div>
 
 #end
+<script>
+//删除好友功能，用于关注/粉丝列表页面
+function deleteFriend(friendId) {
+    confirmAjaxGet("取消关注后，此人的动态消息将不会出现在你的首页，确定要操作？", "/friend/delete?friendId=" + friendId, {
+        success: function(ret) {
+            if (ret.state == "ok") {
+            	showOkMsg("取消关注成功");
+            	//1秒后刷新
+            	window.setTimeout(function () {
+            		location.reload();
+                }, 1000);
+            } else {
+                showReplyErrorMsg("取消关注失败");
+            }
+        }
+    });
+}
+</script>
