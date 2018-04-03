@@ -20,11 +20,11 @@
 				<h2 class="title">#(follow.nickName)</h2>
 				<div class="foot-block clearfix">
 					<div class="author">
-						<span>文章数 #(follow.postNum)</span>
+						<span>文章数 #(comKit.getPostNum(follow.friendId))</span>
 						<span>评论数 #(comKit.getCommentNum(follow.friendId))</span>
 					</div>
 					<div class="pull-right hidden-xs">
-						<a class="btn btn-success btn-xs" href="javascript:void(0);" data-id="781" rel="unfollow" style="color: #fff;">取消关注</a>
+						<a class="btn btn-success btn-xs" onclick="deleteFriend(#(follow.friendId))" href="javascript:void(0);" data-id="781" rel="unfollow" style="color: #fff;">取消关注</a>
 					</div>
 				</div>
 			</div>
