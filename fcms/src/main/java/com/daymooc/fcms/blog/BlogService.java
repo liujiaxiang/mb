@@ -69,7 +69,7 @@ public class BlogService
 	
 	public List<Posts> getNewestPost(int postNum)
 	{
-		List<Posts> newPosts = postDao.find("select * from posts order by createAt limit ?", postNum);
+		List<Posts> newPosts = postDao.find("select * from posts order by createAt desc limit ?", postNum);
 		
 		return newPosts;
 	}
