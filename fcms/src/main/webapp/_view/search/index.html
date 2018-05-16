@@ -160,21 +160,11 @@ $(document).ready(function(){
 
 function highlight(keyWord) {
 	 var key = keyWord.split(' ');
-	 $(".posts-list").each(function () {
+	 $(".excerpt").each(function () {
          for (var i=0; i<key.length; i++) {
 				//正则表达式，key[i]为关键词，ig忽略大小写，g的话不忽略
 				var reg=new RegExp("("+key[i]+")","ig"); 
 				
-				var ym=$(this).html();//course_name是要高亮的区域，div的id值
-				$(this).html(ym.replace(reg, "<span class='highlight'>"+key[i]+"</span>"));
-			 }
-     });
-	 
-	 $(".course_des").each(function () {
-         for (var i=0; i<key.length; i++) {
-				//正则表达式，key[i]为关键词，ig忽略大小写，g的话不忽略
-				var reg=new RegExp("("+key[i]+")","ig"); 
-
 				var ym=$(this).html();//course_name是要高亮的区域，div的id值
 				$(this).html(ym.replace(reg, "<span class='highlight'>"+key[i]+"</span>"));
 			 }
