@@ -63,3 +63,5 @@ QQ群：231785927
 `GeryJiang`         10元
 
 `dengjiyu`          10元
+
+`林Alan`            10元
